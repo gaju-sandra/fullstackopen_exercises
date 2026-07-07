@@ -1,17 +1,19 @@
-class Person {
-  constructor(name, age) {
-    this.name = name
-    this.age = age
-  }
-  greet() {
-    console.log('hello, my name is ' + this.name)
-  }
+import { useState } from 'react'
+
+const App = () => {
+  const [ counter, setCounter ] = useState(0)
+
+  return (
+    <div>
+      <div>{counter}</div>
+      <button onClick={() => setCounter(counter + 1)}>
+        plus
+      </button>
+
+      <button onClick={() => setCounter(2)}> 
+        zero
+      </button>
+    </div>
+  )
 }
-
-const adam = new Person('Adam Ondra', 33)
-adam.greet()
-
-const janja = new Person('Janja Garnbret', 27)
-janja.greet()
-
 export default App
